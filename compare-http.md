@@ -1,10 +1,10 @@
 <table class="table" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
 <tr class="trhead">
-<td width="150">Differentiator</td>
-<td width="150">HTTP/1.0</td>
-<td width="150">HTTP/1.1</td>
-<td width="150">HTTP/2</td>
+<td>Differentiator</td>
+<td>HTTP/1.0</td>
+<td>HTTP/1.1</td>
+<td>HTTP/2</td>
 </tr>
 <tr>
 <td>Year</td>
