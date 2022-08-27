@@ -18,20 +18,22 @@ rem's default value of 16px isn't a very strong argument for its use. Writing 0.
 
 There are two parts to rem's advantage over other units.
 
-### User preferences are respected
+  - User preferences are respected
+  - You can change the apparent px value of rem to whatever you'd like
   
-You can change the apparent px value of rem to whatever you'd like
-Respecting User Preferences
-Browser zoom has changed a lot over the years. Historically many browsers would only scale up font-size, but that changed pretty rapidly when websites realized that their beautiful pixel-perfect designs were breaking any time someone zoomed in or out. At this point, browsers scale the entire page, so font-based zooming is out of the picture.
+### Respecting User Preferences
+
+  Browser zoom has changed a lot over the years. Historically many browsers would only scale up font-size, but that changed pretty rapidly when websites realized that their beautiful pixel-perfect designs were breaking any time someone zoomed in or out. At this point, browsers scale the entire page, so font-based zooming is out of the picture.
 
 Respecting a user's wishes is not out of the picture. Just because a browser is set to 16px by default, doesn't mean any user can't change their preferences to 24px or 32px to correct for low vision or poor visibility (e.x. screen glare). If you base your units off of rem, any user at a higher font-size will see a proportionally larger site. Borders will be bigger, padding will be bigger, margins will be bigger, everything will scale up fluidly.
 
 If you base your media queries on rem, you can also make sure that the site your users see fits their screen. A user with font-size set to 32px on a 640px wide browser, will effectively be seeing your site as shown to a user at 16px on a 320px wide browser. There's absolutely no loss for RWD in using rem.
 
-Changing Apparent px Value
+## Changing Apparent `px` Value
+  
 Because rem is based on the font-size of the :root node, if you want to change what 1rem represents, all you have to do is change the font-size:
 
-```html
+```css
 :root {
   font-size: 100px;
 }
@@ -108,10 +110,12 @@ and have 1rem equal 1px.
 
 So there you have it, a simple solution to respect user wishes while also avoiding over-complicating your CSS.
 
-Wait, so what's the catch?
+### Wait, so what's the catch?
+  
 I was afraid you might ask that. As much as I'd like to pretend that rem is magic and solves-all-things, there are still some issues of note. Nothing deal-breaking in my opinion, but I'm going to call them out so you can't say I didn't warn you.
 
-Media Queries (use em)
+### Media Queries (use em)
+ 
 One of the first issues you'll run into with rem involves media queries. Consider the following code:
 
 ```css
@@ -139,17 +143,21 @@ This is a bit annoying, because it means that you have to do some fractional cal
 | 1024 |  64 |
 | 1200 |  75 |
 | 1600 | 100 |
+  
 Additionally if you're using a CSS preprocessor, you can use mixins or variables to manage your media queries, which will mask the issue entirely.
 
-Safari
+### Safari
+  
 Unfortunately there's a known bug with Safari where changes to the :root font-size do actually change the calculated rem values for media query ranges. This can cause some very strange behavior if the font-size of the :root element is changed within a media query. Fortunately the fix is simple: use em units for media queries.
 
-Context Switching
+### Context Switching
+  
 If you switch between projects various different projects, it's quite possible that the apparent font-size of rem will have different values. In one project, you might be using an apparent size of 10px where in another project the apparent size might be 1px. This can be confusing and cause issues.
 
 My only recommendation here is to stick with 62.5% to convert rem to an apparent size of 10px, because that has been more common in my experience.
 
-Shared CSS Libraries
+### Shared CSS Libraries
+  
 If you're writing CSS that's going to be used on a site that you don't control, such as for an embedded widget, there's really no good way to know what apparent size rem will have. If that's the case, feel free to keep using px.
 
 If you still want to use rem though, consider releasing a Sass or LESS version of the stylesheet with a variable to override the scaling for the apparent size of rem.
