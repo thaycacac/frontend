@@ -136,7 +136,7 @@ rem in media queries uses the initial value of font-size and should not (see Saf
 This is a bit annoying, because it means that you have to do some fractional calculations, but I have found that most common media queries already use values that are multiples of 16.
 
 |   px | rem |
-+------+-----+
+|------|-----|
 |  320 |  20 |
 |  480 |  30 |
 |  768 |  48 |
