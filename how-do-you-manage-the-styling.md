@@ -37,7 +37,7 @@ Utility-first CSS
 
  ## What is the pros/cons?
  
- ### Utility-first CSS
+ ### Utility-first CSS (Tailwind CSS)
  
 Pros
 
