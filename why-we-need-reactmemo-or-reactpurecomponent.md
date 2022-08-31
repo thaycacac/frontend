@@ -33,7 +33,7 @@ const memoizedValue = useMemo(() =>
 ```
 Let’s consider a simple example for calculating a factorial. When the component renders initially, the useMemo Hook calls FactorialCalc and memoizes the value calculated before returning the result to the component. The significant point here is that if the list of dependencies (`[number]`) we provide does not update between renders, useMemo will return the memoizedFactorial instead of calling FactorialCalc.
 
-```react
+```js
 import { useState, useMemo } from "react";
 const App = () => {
   const [number, SetNumber] = useState(1);
