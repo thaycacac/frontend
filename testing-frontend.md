@@ -1,0 +1,3 @@
+- [https://www.testim.io/blog/front-end-testing-complete-overview/](https://www.testim.io/blog/front-end-testing-complete-overview/)
+- [https://www.netguru.com/blog/front-end-testing](https://www.netguru.com/blog/front-end-testing)
+- [https://tsh.io/blog/why-use-typescript/](https://tsh.io/blog/why-use-typescript/)
